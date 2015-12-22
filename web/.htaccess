@@ -2,11 +2,11 @@
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /git/hackastory/web/
+RewriteBase /git/hackastory/site/web/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /git/hackastory/web/index.php [L]
+RewriteRule . /git/hackastory/site/web/index.php [L]
 </IfModule>
 
 # END WordPress

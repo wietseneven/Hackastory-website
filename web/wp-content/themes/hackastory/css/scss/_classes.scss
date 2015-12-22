@@ -1,0 +1,67 @@
+.clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    display: block;
+}
+
+.container {
+    @include container;
+}
+
+.hidden {
+    display: none;
+}
+
+.list-inline {
+    @include reset;
+
+    li {
+        list-style: none;
+        float: left;
+        margin: 0 10px;
+    }
+
+    @include respond-until($screen-sm) {
+        li {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    @include respond-from($screen-sm) {
+        li:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.button {
+    @include button;
+
+    &.button-lg {
+        font-size: 3rem;
+        font-family: $font-header;
+    }
+}
+
+.lead {
+    font-size: 2rem;
+    text-align: center;
+    font-family: $font-header;
+
+    @include respond-until($screen-sm) {
+        font-size: 1.7rem;
+    }
+}
+
+.text-button {
+    margin-left: 9px;
+}

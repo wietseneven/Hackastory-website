@@ -1,0 +1,8 @@
+{
+  "name": "hackastory-theme",
+  "private": true,
+  "dependencies": {
+    "valenski": "*",
+    "normalize-scss": "~3.0.3"
+  }
+}

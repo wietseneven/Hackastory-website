@@ -1,0 +1,32 @@
+.footer {
+    width: calc(100% - #{$default-padding * 2});
+    margin: $default-padding auto $default-padding * 2 auto;
+    padding: $default-padding / 2 0;
+
+    @include respond-from($screen-sm) {
+        .footer-left {
+            float: left;
+        }
+
+        .footer-right {
+            float: right;
+        }
+    }
+
+    @include respond-until($screen-sm) {
+        .footer-left,
+        .footer-right {
+            float: left;
+            width: 100%;
+            text-align: center;
+        }
+
+        ul, li {
+            display: inline-block;
+        }
+    }
+
+    .share {
+        clear: both;
+    }
+}

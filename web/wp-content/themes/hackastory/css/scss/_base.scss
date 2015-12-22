@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 70.3125%;
+}
+
+body {
+    background: white;
+    color: $black;
+    font-family: $font-text;
+    font-size: 1.6rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-header;
+    font-weight: bold;
+    color: $black;
+    margin: 0;
+}
+
+h1 {
+    background: $primary;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 6rem;
+    padding: 0px 10px;
+    transform: rotate(-2deg);
+    transition: 200ms transform;
+
+    margin: 20px 0;
+
+    &, a {
+        color: $black;
+    }
+
+    &:hover {
+        transform: rotate(2deg);
+    }
+}
+
+h2 {
+    font-size: 3rem;
+    display: inline-block;
+    padding: 5px 10px;
+    background: $secondary;
+    transform: rotate(2deg);
+    margin: 20px 0;
+
+    &, a {
+        color: white;
+    }
+}
+
+h2 time {
+    font-size: 1.6rem;
+    color: $black;
+    padding-left: 5px;
+}
+
+h3 {
+    color: $black;
+    font-size: 2.6rem;
+    display: inline-block;
+    padding: 5px 10px;
+    background: $green;
+    transform: rotate(1deg);
+}
+
+body h3:nth-child(1) {
+    background: $orange;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+li, p {
+    line-height: 2.5rem;
+}
+
+code, pre, tt {
+    background: $offwhite;
+}
+
+code, tt {
+    padding: 3px;
+}
+
+pre {
+    padding: 10px;
+}
+
+@include respond-until($screen-sm) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}

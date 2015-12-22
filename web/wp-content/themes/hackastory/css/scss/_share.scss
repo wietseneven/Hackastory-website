@@ -1,0 +1,50 @@
+.share {
+    text-align: center;
+    margin-bottom: $default-padding;
+    clear: left;
+
+    h3 {
+        padding-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    #body & li {
+        background: none;
+    }
+}
+
+.share a,
+a.share-btn {
+    width: 40px;
+    height: 40px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: $blue;
+    display: inline-block;
+    text-indent: -9999px;
+    transition: transform 0.15s;
+    transform:  scale(1) ;
+
+    &:hover {
+        transform:  scale(1.2) ;
+    }
+
+    &[data-type="twitter"] {
+        @include sprite-twitter;
+    }
+
+    &[data-type="facebook"] {
+        @include sprite-facebook;
+        background-position-x: 13px;
+    }
+
+    &[data-type="flickr"] {
+        background-image: url('../img/flickr-white.png');
+        background-size: 80%;
+    }
+
+    &[data-type="youtube"] {
+        background-image: url('../img/youtube-white.png');
+        background-size: 80%;
+    }
+}

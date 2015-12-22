@@ -1,0 +1,156 @@
+$main-nav-height: 80px;
+
+@mixin main-nav-small {
+    height: auto;
+    overflow: hidden;
+
+    &:after, &:before {
+        display: none;
+    }
+
+    .main-nav-logo, .menu {
+        float: left;
+        clear: left;
+    }
+
+    .main-nav-logo {
+        width: 100%;
+
+        img {
+            display: block;
+            margin: 10px auto;
+            position: static;
+        }
+    }
+
+    .menu {
+        width: 100%;
+        text-align: center;
+        margin-top: 0;
+    }
+}
+
+.main-nav {
+    @include wh(calc(100% - #{$default-padding * 2}), $main-nav-height);
+    margin: 0 auto;
+
+    @include respond-until($screen-sm) {
+        @include main-nav-small;
+    }
+
+    &[data-type="small"] {
+        @include main-nav-small;
+    }
+
+    .share {
+        margin: 10px 0 0 0;
+        clear: right;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin-top: 0;
+        position: relative;
+        top: -35px;
+        left: -10px;
+    }
+
+    @include respond-until($screen-sm) {
+        h1 {
+            position: static;
+        }
+
+        .main-nav-logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.main-nav-logo {
+    float: left;
+
+    img {
+        max-width: 100px;
+        width: 100%;
+        position: relative;
+        top: 5px;
+        left: -10px;
+    }
+}
+
+.menu {
+    float: right;
+
+    &, li {
+        @include reset;
+    }
+
+    & {
+        margin-top: 27px;
+    }
+
+    li {
+        list-style: none;
+        display: inline-block;
+        margin: 0;
+        text-transform: uppercase;
+        padding: 5px 10px;
+        font-weight: bold;
+        transition: 200ms transform;
+    }
+
+    li:nth-child(1) {
+        background: $red;
+        transform: rotate(2deg);
+    }
+
+    li:nth-child(2) {
+        background: $green;
+        transform: rotate(-2deg);
+    }
+
+    li:nth-child(3) {
+        background: $purple;
+        transform: rotate(3deg);
+    }
+
+    li:nth-child(4) {
+        background: $orange;
+        transform: rotate(-3deg);
+    }
+
+    li:nth-child(5) {
+        background: $yellow;
+        transform: rotate(5deg);
+    }
+
+    li:hover {
+        transform: rotate(0deg);
+    }
+
+    li:last-child {
+        margin-right: 0;
+    }
+
+    a {
+        font-size: 2rem;
+        color: $black;
+    }
+
+    @include respond-until($screen-sm) {
+        &.share {
+            float: none;
+        }
+    }
+}
+
+.main-nav-mini {
+    text-align: center;
+
+    ul {
+        float: none;
+        display: inline-block;
+        margin-top: 5px;
+    }
+}
