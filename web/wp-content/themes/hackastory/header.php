@@ -16,9 +16,10 @@
     <meta name="og:image" content="<?= $T->getPostThumb(); ?>">
 
     <title><?php the_title(); ?> &raquo; <?php bloginfo('name'); ?></title>
-
+    
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="google-site-verification" content="TckLz5_Yvk7heUkGI4UN204gIIH6FkHotvyixNXeeXo" />
 
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?>" href="/feed" />
