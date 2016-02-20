@@ -1,0 +1,222 @@
+.projects {
+    max-width: 960px;
+    margin: 20px auto 50px;
+}
+.project-heading {
+    margin: 10px 0;
+    padding: 0;
+    background: none;
+    transform: none !important;
+    font-size: 3rem;
+}
+
+.projects-notification {
+    margin: 10px 0 0;
+    background-color: $primary;
+    color: $black;
+    padding: 15px 20px 20px;
+
+    p {
+        margin: 0 0 1rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.projects-notification-heading,
+.projects-notification-subheading,
+.project-excerpt-heading {
+    display: block;
+    margin: 0 0 8px;
+    padding: 0;
+    background: none !important;
+    transform: none !important;
+    color: $black !important;
+    font-size: 2.5rem;
+}
+.projects-notification-subheading {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+.projects-filter {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 35px 0 38px;
+}
+.projects-filter-toggle-label {
+    cursor: pointer;
+    font-size: 2rem;
+
+    &:after {
+        content: '';
+        position: relative;
+        top: -4px;
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-left: 15px;
+        border-bottom: 2px solid #ccc;
+        border-left: 2px solid #ccc;
+        transform: rotate(-45deg);
+        transition: all .2s;
+
+        .projects-filter-toggle:checked ~ & {
+            top: 4px;
+            transform: rotate(135deg);
+        }
+    }
+    &:hover:after {
+        border-color: $black;
+    }
+}
+.projects-filter-toggle {
+    display: none;
+}
+.projects-filter-content {
+    display: none;
+    margin-top: 10px;
+    text-align: left;
+
+    .projects-filter-toggle:checked ~ & {
+        display: block;
+    }
+}
+.projects-filter-list {
+    display: block;
+    padding: 0;
+    margin: 1.25rem 0 2.5rem;
+    list-style-type: none;
+    clear: both;
+    @extend .clearfix;
+
+    li {
+        float: left;
+        margin-right: 12px;
+
+        label {
+            background-color: #eee;
+            padding: 6px 12px;
+            cursor: pointer;
+            font-weight: normal;
+        }
+        input[type="checkbox"] {
+            display: none;
+
+            &:checked + label {
+                background-color: $primary;
+            }
+        }
+        input[type="radio"] {
+            display: none;
+
+            &:checked + label {
+                background-color: $primary;
+            }
+        }
+    }
+}
+
+.projects-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.project-excerpt {
+    position: relative;
+    display: block;
+    padding: 20px;
+    height: 280px;
+    color: #fff;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 25%;
+        min-height: 120px;
+        opacity: .5;
+        background: linear-gradient(to bottom, #000, rgba(#000, .01));
+    }
+}
+.project-excerpt-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #eee url('../img/project-default.png') center;
+    background-size: cover;
+    transition: all .3s;
+
+    .project-excerpt:hover & {
+        transform: scale(1.025);
+    }
+}
+.project-excerpt-heading {
+    position: relative;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    color: #fff !important;
+}
+.project-excerpt-subheading {
+    position: relative;
+    display: block;
+    margin-top: -2px;
+}
+.project-excerpt-votes {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: $primary;
+
+    a {
+        display: inline-block;
+        padding: 10px 6px;
+
+        &:first-child {
+            padding-left: 15px;
+        }
+        &:last-child {
+            padding-right: 15px;
+        }
+    }
+}
+.project-excerpt-anchor {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.project-excerpt-members {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    li {
+        cursor: default;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        margin-right: 6px;
+        float: left;
+        background: $black url('../img/member-default.png') center;
+        background-size: cover;
+        @extend .hide-text;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
