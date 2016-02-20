@@ -11,6 +11,27 @@ class Hackastory {
         // Remove stupid WP emoji support
         remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
         remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+        // Add projecst CPT
+        register_post_type('projects', array(
+            'labels' => array(
+                'menu_name'          => 'Projects',
+                'name'               => __('Project'),
+                'singular_name'      => __('Project'),
+                'add_new'            => __('Add'),
+                'add_new_item'       => __('Add new project'),
+                'edit_item'          => __('Edit project'),
+                'new_item'           => __('New project'),
+                'all_items'          => __('All projects'),
+                'view_item'          => __('View project'),
+                'search_items'       => __('Search projects'),
+                'not_found'          => __('No projects found'),
+                'not_found_in_trash' => __('No projects found in trash'),
+            ),
+            'public'        => true,
+            'has_archive'   => true,
+            'menu_position' => 9
+        ));
     }
 
     public function navMenu($handle = self::DEFAULT_NAVMENU) {
