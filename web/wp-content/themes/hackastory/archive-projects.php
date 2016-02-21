@@ -1,7 +1,4 @@
 <?php get_header(); ?>
-<?php
-    $query = new WP_Query();
-?>
 <div class="container">
     <div class="projects">
         <div class="row">
@@ -29,7 +26,7 @@
                         </div>
                     </div>
                     <div class="projects-filter">
-                        <input type="checkbox" class="projects-filter-toggle" id="projects-filter-toggle" checked>
+                        <input type="checkbox" class="projects-filter-toggle" id="projects-filter-toggle">
                         <label for="projects-filter-toggle" class="projects-filter-toggle-label">Filter</label>
                         <div class="projects-filter-content">
                             <?php
@@ -82,7 +79,9 @@
                             <div class="project-excerpt">
                                 <div class="project-excerpt-image"<?php if ( $image ) echo ' style="background-image: url(' . $image['sizes']['medium_large'] . ');"'; ?>></div>
                                 <h2 class="project-excerpt-heading"><?php the_title(); ?></h2>
-                                <small class="project-excerpt-subheading"><?php the_field('project-event'); ?></small>
+                                <?php if ( get_field('project-event') ) { ?>
+                                    <small class="project-excerpt-subheading"><?php the_field('project-event'); ?></small>
+                                <?php } ?>
                                 <a href="<?php the_permalink(); ?>" class="project-excerpt-anchor"></a>
                                 <?php if ( get_field('project-members') ) { ?>
                                     <ul class="project-excerpt-members">
@@ -97,8 +96,8 @@
                                     </ul>
                                 <?php } ?>
                                 <div class="project-excerpt-votes">
-                                    <a href="#" class="project-vote project-vote-experimental">12</a>
-                                    <a href="#" class="project-vote project-vote-potential">9</a>
+                                    <span class="project-vote project-vote-experimental" title="Cast vote for best experiment">12</span>
+                                    <span class="project-vote project-vote-potential" title="Cast vote for most potential">9</span>
                                 </div>
                             </div>
                         </li>
