@@ -12,7 +12,7 @@ class Hackastory {
         remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
         remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
-        // Add projecst CPT
+        // Add projects CPT
         register_post_type('projects', array(
             'labels' => array(
                 'menu_name'          => 'Projects',
