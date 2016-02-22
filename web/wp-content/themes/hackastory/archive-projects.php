@@ -75,14 +75,23 @@
                         the_post();
                         $image = get_field('project-image');
                         ?>
-                        <li class="large-6 columns">
+                        <li class="medium-6 columns"
+                            data-categories="[<?php echo join(',', get_field('project-categories')); ?>]"
+                            data-timestamp="<?php the_time('U'); ?>"
+                            data-experiment-votes=""
+                            data-potentional-votes="">
                             <div class="project-excerpt">
-                                <div class="project-excerpt-image"<?php if ( $image ) echo ' style="background-image: url(' . $image['sizes']['medium_large'] . ');"'; ?>></div>
+                                <div class="project-excerpt-image-container">
+                                    <div class="project-excerpt-image"<?php if ( $image ) echo ' style="background-image: url(' . $image['sizes']['medium_large'] . ');"'; ?>></div>
+                                </div>
                                 <h2 class="project-excerpt-heading"><?php the_title(); ?></h2>
                                 <?php if ( get_field('project-event') ) { ?>
                                     <small class="project-excerpt-subheading"><?php the_field('project-event'); ?></small>
                                 <?php } ?>
                                 <a href="<?php the_permalink(); ?>" class="project-excerpt-anchor"></a>
+                                <?php if ( get_field('project-banner') ) { ?>
+                                    <span class="project-excerpt-banner"><?php the_field('project-banner'); ?></span>
+                                <?php } ?>
                                 <?php if ( get_field('project-members') ) { ?>
                                     <ul class="project-excerpt-members">
                                         <?php
@@ -106,7 +115,9 @@
                 ?>
             </ul>
         <?php } else { ?>
-            <p></p>
+            <p>No projects could be found.</p>
         <?php } ?>
     </div>
+</div>
+<script src="<?php echo get_template_directory_uri(); ?>/js/projects.js"></script>
 <?php get_footer(); ?>
