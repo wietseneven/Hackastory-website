@@ -2,7 +2,7 @@
     var actionbar = {
         init: function() {
             var $container = $('.project-actions');
-            if ( !$container ) return;
+            if ( !$container.length ) return;
 
             // rAF polyfill
             if ( !Date.now ) Date.now = function() { return new Date().getTime(); };
