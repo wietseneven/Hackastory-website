@@ -10,8 +10,8 @@
         <div class="project-content">
             <div class="project-actions">
                 <ul>
-                    <li><span class="project-vote project-vote-experimental" title="Cast vote for best experiment">12</span></li>
-                    <li><span class="project-vote project-vote-potential" title="Cast vote for most potential">9</span></li>
+                    <li><span class="project-vote project-vote-experimental" title="Cast vote for best experiment"><?php echo get_post_meta(get_the_ID(), 'project-votes-experimental', true); ?></span></li>
+                    <li><span class="project-vote project-vote-potential" title="Cast vote for most potential"><?php echo get_post_meta(get_the_ID(), 'project-votes-potential', true); ?></span></li>
                 </ul>
                 <ul>
                     <?php if ( get_field('project-demo') ) { ?>

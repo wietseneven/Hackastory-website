@@ -32,6 +32,18 @@ class Hackastory {
             'has_archive'   => true,
             'menu_position' => 9
         ));
+
+        // Add votes metabox
+        function hackastory_votes_meta_box($post_type, $post) {
+            add_post_meta($post->ID, 'project-votes-experimental', 0, true);
+            add_post_meta($post->ID, 'project-votes-potential', 0, true);
+
+            add_meta_box('votes_box', 'Votes', function($post) {
+                echo 'Best experiment: ' . get_post_meta($post->ID, 'project-votes-experimental', true) . '<br>';
+                echo 'Most potential: ' . get_post_meta($post->ID, 'project-votes-potential', true);
+            }, array('projects'), 'side');
+        }
+        add_action('add_meta_boxes', 'hackastory_votes_meta_box', 10, 2);
     }
 
     public function navMenu($handle = self::DEFAULT_NAVMENU) {

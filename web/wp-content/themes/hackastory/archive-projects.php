@@ -105,8 +105,8 @@
                                     </ul>
                                 <?php } ?>
                                 <div class="project-excerpt-votes">
-                                    <span class="project-vote project-vote-experimental" title="Cast vote for best experiment">12</span>
-                                    <span class="project-vote project-vote-potential" title="Cast vote for most potential">9</span>
+                                    <span class="project-vote project-vote-experimental" title="Cast vote for best experiment"><?php echo get_post_meta(get_the_ID(), 'project-votes-experimental', true); ?></span>
+                                    <span class="project-vote project-vote-potential" title="Cast vote for most potential"><?php echo get_post_meta(get_the_ID(), 'project-votes-potential', true); ?></span>
                                 </div>
                             </div>
                         </li>
