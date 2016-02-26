@@ -105,8 +105,18 @@
                                     </ul>
                                 <?php } ?>
                                 <div class="project-excerpt-votes">
-                                    <span class="project-vote project-vote-experimental" title="Cast vote for best experiment"><?php echo get_post_meta(get_the_ID(), 'project-votes-experimental', true); ?></span>
-                                    <span class="project-vote project-vote-potential" title="Cast vote for most potential"><?php echo get_post_meta(get_the_ID(), 'project-votes-potential', true); ?></span>
+                                    <span class="project-vote project-vote-experimental" title="Cast vote for best experiment">
+                                        <span class="project-vote-icon">
+                                            <?php include(get_template_directory() . '/img/icon-experiment.svg'); ?>
+                                        </span>
+                                        <?php echo get_post_meta(get_the_ID(), 'project-votes-experimental', true); ?>
+                                    </span>
+                                    <span class="project-vote project-vote-potential" title="Cast vote for most potential">
+                                        <span class="project-vote-icon">
+                                            <?php include(get_template_directory() . '/img/icon-potential.svg'); ?>
+                                        </span>
+                                        <?php echo get_post_meta(get_the_ID(), 'project-votes-potential', true); ?>
+                                    </span>
                                 </div>
                             </div>
                         </li>
