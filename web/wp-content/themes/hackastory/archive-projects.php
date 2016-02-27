@@ -43,7 +43,7 @@
                                     <ul class="projects-filter-list">
                                         <?php foreach ( $categories['choices'] as $choice ) { ?>
                                             <li>
-                                                <input type="checkbox" value="<?php echo $choice; ?>" id="<?php echo $choice; ?>">
+                                                <input type="checkbox" class="projects-filter-category" value="<?php echo $choice; ?>" id="<?php echo $choice; ?>">
                                                 <label for="<?php echo $choice; ?>"><?php echo $choice; ?></label>
                                             </li>
                                         <?php } ?>
@@ -81,7 +81,7 @@
                         $image = get_field('project-image');
                         ?>
                         <li class="medium-6 columns"
-                            data-categories="[<?php echo join(',', get_field('project-categories')); ?>]"
+                            data-categories="<?php echo join(',', get_field('project-categories')); ?>"
                             data-timestamp="<?php the_time('U'); ?>"
                             data-experiment-votes="<?php echo get_post_meta(get_the_ID(), 'project-votes-experimental', true); ?>"
                             data-potentional-votes="<?php echo get_post_meta(get_the_ID(), 'project-votes-potential', true); ?>">
