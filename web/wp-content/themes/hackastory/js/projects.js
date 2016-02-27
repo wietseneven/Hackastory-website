@@ -44,15 +44,26 @@
     }
     var filter = {
         init: function() {
-            var self = this;
+            $('.projects-list').clone().addClass('projects-list--clone').removeClass('projects-list').insertAfter('.projects-list');
+            $('.projects-filter-category').on('change', $.proxy(function() {
+                this.filter();
+            }, this));
 
-            $('.projects-filter-category').on('change', function() {
-                self.filter();
-            });
+            // Make sure the order and filter is correct
+            this.filter();
         },
+        reset: function() {
+            $('.projects-list').remove();
+            $('.projects-list--clone').clone().removeClass('projects-list--clone').addClass('projects-list').insertBefore('.projects-list--clone');
+
+            $('.projects-list-empty').hide();
+        },
+
         filter: function() {
-            var categories = [],
-                $projects = $('.projects-list [data-categories]');
+            var categories = [];
+
+            // Reset
+            this.reset();
 
             // Retrieve all selected options
             $('.projects-filter-list input:checkbox').each(function() {
@@ -66,20 +77,28 @@
                 return;
             }
 
-            $projects.hide().each(function() {
+            $('.projects-list [data-categories]').each(function() {
                 var arr = $(this).data('categories').split(',');
+
+                var show = false;
                 for ( var i in arr ) {
                     if ( categories.indexOf(arr[i]) >= 0 ) {
-                        $(this).show();
+                        show = true;
                         break;
                     }
                 }
+
+                if ( !show ) $(this).remove();
             });
 
-            this.order();
-        },
-        order: function() {
+            // Show message if theres
+            if ( !$('.projects-list [data-categories]').length ) {
+                $('.projects-list-empty').show();
+                return;
+            }
 
+            // Sort the items
+            // TODO
         }
     }
 

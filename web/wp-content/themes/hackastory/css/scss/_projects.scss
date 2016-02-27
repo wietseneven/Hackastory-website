@@ -183,6 +183,9 @@
         }
     }
 }
+.projects-list--clone {
+    display: none;
+}
 
 .projects-list {
     margin: 0;
@@ -426,6 +429,11 @@
     p {
         margin: 0 0 1.25rem;
     }
+}
+
+.projects-list-empty {
+    display: none;
+    text-align: center;
 }
 
 // Vote icon animations

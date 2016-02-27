@@ -74,6 +74,11 @@
                     </div>
                 </div>
             </div>
+            <div class="row projects-list-empty">
+                <div class="large-12 columns">
+                    <p>No projects could be found</p>
+                </div>
+            </div>
             <ul class="projects-list row">
                 <?php
                     while ( have_posts() ) {
