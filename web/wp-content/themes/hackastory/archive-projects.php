@@ -12,25 +12,20 @@
                     <div class="projects-notification">
                         <div class="row">
                             <div class="large-12 columns">
-                                <h2 class="projects-notification-heading">We need your votes!</h2>
+                                <h2 class="projects-notification-heading">Masters of Tinkering Awards</h2>
                             </div>
                             <div class="large-6 columns">
-                                <p>In 1 year: 5 hackathons, 4 countries, 3 continents and 21 prototypes. Time to celebrate with the Masters of Tinkering Awards. Pick your favorites!</p>
+                                <p>In 1 year: 5 hackathons, 4 countries, 3 continents and 21 prototypes. Time to celebrate with the Masters of Tinkering Awards.</p>
+                                <p><strong>Choose a winner in each categorie</strong></p>
                             </div>
                             <div class="large-6 columns">
-                                <div class="projects-notification-icon">
-                                    <span class="project-vote-icon project-vote-icon--large">
-                                        <?php include(get_template_directory() . '/img/icon-experiment.svg'); ?>
-                                    </span>
+                                <div class="projects-notification-icon project-vote-experimental">
                                     <h3 class="projects-notification-subheading">Best experiment</h3>
-                                    <p>Lorem ipsum dolor sit amet.</p>
+                                    <p>Stretching the boundaries of possibilities</p>
                                 </div>
-                                <div class="projects-notification-icon">
-                                    <span class="project-vote-icon project-vote-icon--large">
-                                        <?php include(get_template_directory() . '/img/icon-potential.svg'); ?>
-                                    </span>
+                                <div class="projects-notification-icon project-vote-potential">
                                     <h3 class="projects-notification-subheading">Most potential</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                                    <p>Creations with exceeding values</p>
                                 </div>
                             </div>
                         </div>
@@ -116,15 +111,9 @@
                                 <?php } ?>
                                 <div class="project-excerpt-votes">
                                     <span class="project-vote project-vote-experimental" title="Cast vote for best experiment">
-                                        <span class="project-vote-icon">
-                                            <?php include(get_template_directory() . '/img/icon-experiment.svg'); ?>
-                                        </span>
                                         <?php echo get_post_meta(get_the_ID(), 'project-votes-experimental', true); ?>
                                     </span>
                                     <span class="project-vote project-vote-potential" title="Cast vote for most potential">
-                                        <span class="project-vote-icon">
-                                            <?php include(get_template_directory() . '/img/icon-potential.svg'); ?>
-                                        </span>
                                         <?php echo get_post_meta(get_the_ID(), 'project-votes-potential', true); ?>
                                     </span>
                                 </div>
