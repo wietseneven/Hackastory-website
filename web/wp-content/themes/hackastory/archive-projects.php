@@ -15,13 +15,23 @@
                                 <h2 class="projects-notification-heading">We need your votes!</h2>
                             </div>
                             <div class="large-6 columns">
-                                <p>There is a little competition going on right now and we want you to vote on projects for 2 seperate categories.</p>
+                                <p>In 1 year: 5 hackathons, 4 countries, 3 continents and 21 prototypes. Time to celebrate with the Masters of Tinkering Awards. Pick your favorites!</p>
                             </div>
                             <div class="large-6 columns">
-                                <h3 class="projects-notification-subheading">Best experiment</h3>
-                                <p>Lorem ipsum dolor sit amet.</p>
-                                <h3 class="projects-notification-subheading">Most potential</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                                <div class="projects-notification-icon">
+                                    <span class="project-vote-icon project-vote-icon--large">
+                                        <?php include(get_template_directory() . '/img/icon-experiment.svg'); ?>
+                                    </span>
+                                    <h3 class="projects-notification-subheading">Best experiment</h3>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                                <div class="projects-notification-icon">
+                                    <span class="project-vote-icon project-vote-icon--large">
+                                        <?php include(get_template_directory() . '/img/icon-potential.svg'); ?>
+                                    </span>
+                                    <h3 class="projects-notification-subheading">Most potential</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                                </div>
                             </div>
                         </div>
                     </div>

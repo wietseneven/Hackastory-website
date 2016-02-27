@@ -42,6 +42,21 @@
     font-size: 2rem;
     margin-bottom: 0;
 }
+.projects-notification-icon {
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: 1rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .project-vote-icon {
+        position: absolute;
+        left: 0;
+        top: 10px;
+    }
+}
 
 .projects-filter {
     display: block;
@@ -231,6 +246,10 @@
     .project-actions & {
         margin-right: 4px;
     }
+}
+.project-vote-icon--large {
+    width: 30px;
+    height: 40px;
 }
 
 .project-excerpt-anchor {
