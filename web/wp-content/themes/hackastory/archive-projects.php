@@ -15,8 +15,8 @@
                                 <h2 class="projects-notification-heading">Masters of Tinkering Awards</h2>
                             </div>
                             <div class="large-6 columns">
-                                <p>In 1 year: 5 hackathons, 4 countries, 3 continents and 21 prototypes. Time to celebrate with the Masters of Tinkering Awards.</p>
-                                <p><strong>Choose a winner in each categorie</strong></p>
+                                <p class="projects-notification-description">In 1 year: 5 hackathons, 4 countries, 3 continents and 21 prototypes. Time to celebrate with the Masters of Tinkering Awards.</p>
+                                <p><strong class="projects-notification-goal">Choose a winner in each categorie</strong></p>
                             </div>
                             <div class="large-6 columns">
                                 <div class="projects-notification-icon project-vote-experimental">

@@ -8,7 +8,6 @@
     padding: 0;
     background: none;
     transform: none !important;
-    font-size: 3rem;
 }
 
 .projects-notification {
@@ -24,6 +23,13 @@
             margin-bottom: 0;
         }
     }
+    @include mq('small') {
+        margin-left: -27px;
+        margin-right: -27px;
+        padding-left: 27px;
+        padding-right: 27px;
+        padding-bottom: 25px;
+    }
 }
 .projects-notification-heading,
 .projects-notification-subheading,
@@ -37,6 +43,22 @@
     transform: none !important;
     color: $black !important;
     font-size: 2.5rem;
+}
+.projects-notification-heading {
+    @include mq('small') {
+        font-size: 1.9rem;
+        margin-bottom: 0;
+    }
+}
+.projects-notification-description {
+    @include mq('small') {
+        display: none;
+    }
+}
+.projects-notification-goal {
+    @include mq('small') {
+        font-size: 1.4rem;
+    }
 }
 .projects-notification-subheading {
     font-size: 2rem;
@@ -65,6 +87,17 @@
         top: 14px !important;
         background-image: url('../img/icon-potential.gif');
     }
+
+    @include mq('small') {
+        margin-bottom: 0;
+
+        .projects-notification-subheading {
+            padding: 15px 0 5px;
+        }
+        p {
+            display: none;
+        }
+    }
 }
 
 .projects-filter {
@@ -72,6 +105,10 @@
     width: 100%;
     text-align: center;
     padding: 35px 0 38px;
+
+    @include mq('small') {
+        padding: 25px 0;
+    }
 }
 .projects-filter-toggle-label {
     cursor: pointer;
@@ -198,7 +235,7 @@
 .project-excerpt-heading {
     position: relative;
     z-index: 2;
-    padding-right: 150px;
+    padding-right: 125px;
     margin-bottom: 0;
     font-size: 2rem;
     font-weight: bold;
@@ -208,7 +245,7 @@
     position: relative;
     z-index: 2;
     display: block;
-    padding-right: 150px;
+    padding-right: 125px;
     margin-top: 2px;
     line-height: 1.3;
 }
@@ -323,6 +360,10 @@
 // Singles
 .project-heading {
     font-size: 4rem !important;
+
+    @include mq('small') {
+        font-size: 3rem !important;
+    }
 }
 .project-event {
     display: block;
