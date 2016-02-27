@@ -83,8 +83,8 @@
                         <li class="medium-6 columns"
                             data-categories="[<?php echo join(',', get_field('project-categories')); ?>]"
                             data-timestamp="<?php the_time('U'); ?>"
-                            data-experiment-votes=""
-                            data-potentional-votes="">
+                            data-experiment-votes="<?php echo get_post_meta(get_the_ID(), 'project-votes-experimental', true); ?>"
+                            data-potentional-votes="<?php echo get_post_meta(get_the_ID(), 'project-votes-potential', true); ?>">
                             <div class="project-excerpt">
                                 <div class="project-excerpt-image-container">
                                     <div class="project-excerpt-image"<?php if ( $image ) echo ' style="background-image: url(' . $image['sizes']['medium_large'] . ');"'; ?>></div>
