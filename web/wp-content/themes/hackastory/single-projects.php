@@ -11,12 +11,12 @@
             <div class="project-actions">
                 <ul>
                     <li>
-                        <span class="project-vote project-vote-experimental" title="Cast vote for best experiment">
+                        <span class="project-vote project-vote-experimental" title="Cast vote for best experiment" data-postid="<?php echo get_the_ID(); ?>">
                             <?php echo get_post_meta(get_the_ID(), 'project-votes-experimental', true); ?>
                         </span>
                     </li>
                     <li>
-                        <span class="project-vote project-vote-potential" title="Cast vote for most potential">
+                        <span class="project-vote project-vote-potential" title="Cast vote for most potential" data-postid="<?php echo get_the_ID(); ?>">
                             <?php echo get_post_meta(get_the_ID(), 'project-votes-potential', true); ?>
                         </span>
                     </li>
@@ -31,5 +31,6 @@
         </div>
     </article>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.0/js.cookie.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/projects.js"></script>
 <?php get_footer(); ?>

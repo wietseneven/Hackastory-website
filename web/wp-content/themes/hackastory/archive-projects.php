@@ -16,7 +16,7 @@
                             </div>
                             <div class="large-6 columns">
                                 <p class="projects-notification-description">In 1 year: 5 hackathons, 4 countries, 3 continents and 21 prototypes. Time to celebrate with the Masters of Tinkering Awards.</p>
-                                <p><strong class="projects-notification-goal">Choose a winner in each categorie</strong></p>
+                                <p><strong class="projects-notification-goal">Choose a winner in each catagory</strong></p>
                             </div>
                             <div class="large-6 columns">
                                 <div class="projects-notification-icon project-vote-experimental">
@@ -67,7 +67,7 @@
                                 </li>
                                 <li>
                                     <input type="radio" name="projects-sort" id="projects-sort-mostrecent">
-                                    <label for="projects-sort-mostrecent">Most recent</label>
+                                    <label for="projects-sort-mostrecent">Recent</label>
                                 </li>
                             </ul>
                         </div>
@@ -115,12 +115,8 @@
                                     </ul>
                                 <?php } ?>
                                 <div class="project-excerpt-votes">
-                                    <span class="project-vote project-vote-experimental" title="Cast vote for best experiment">
-                                        <?php echo get_post_meta(get_the_ID(), 'project-votes-experimental', true); ?>
-                                    </span>
-                                    <span class="project-vote project-vote-potential" title="Cast vote for most potential">
-                                        <?php echo get_post_meta(get_the_ID(), 'project-votes-potential', true); ?>
-                                    </span>
+                                    <span class="project-vote project-vote-experimental" title="Cast vote for best experiment" data-postid="<?php echo get_the_ID(); ?>"><?php echo get_post_meta(get_the_ID(), 'project-votes-experimental', true); ?></span>
+                                    <span class="project-vote project-vote-potential" title="Cast vote for most potential" data-postid="<?php echo get_the_ID(); ?>"><?php echo get_post_meta(get_the_ID(), 'project-votes-potential', true); ?></span>
                                 </div>
                             </div>
                         </li>
@@ -133,5 +129,6 @@
         <?php } ?>
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.0/js.cookie.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/projects.js"></script>
 <?php get_footer(); ?>

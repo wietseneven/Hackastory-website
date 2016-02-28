@@ -44,6 +44,27 @@ class Hackastory {
             }, array('projects'), 'side');
         }
         add_action('add_meta_boxes', 'hackastory_votes_meta_box', 10, 2);
+
+        // Define ajaxurl in frontend
+        function hackastory_ajaxurl() {
+            ?>
+            <script type="text/javascript">
+                var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+            </script>
+            <?php
+        }
+        add_action('wp_head', 'hackastory_ajaxurl');
+
+        // AJAX voting
+        function hackastory_votes_callback() {
+            $post_id  = $_POST['post_id'];
+            $meta_key = 'project-votes-' . $_POST['type'];
+            $votes    = max(0, get_post_meta($post_id, $meta_key, true) + intval($_POST['votes']));
+
+            update_post_meta($post_id, $meta_key, $votes);
+            wp_die();
+        }
+        add_action('wp_ajax_hackastory_votes', 'hackastory_votes_callback');
     }
 
     public function navMenu($handle = self::DEFAULT_NAVMENU) {

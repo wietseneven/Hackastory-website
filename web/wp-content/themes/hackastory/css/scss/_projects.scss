@@ -271,8 +271,12 @@
     &:last-child {
         padding-right: 14px;
     }
-    &:hover {
+    &:hover,
+    &.is-active {
         font-weight: bold;
+    }
+    &.is-active {
+        cursor: default;
     }
 }
 .project-vote-icon {
@@ -446,6 +450,7 @@
         width: 20px;
         height: 32px;
         margin-top: -12px;
+        margin-right: 5px;
         background: transparent center no-repeat;
         background-size: contain;
     }
@@ -454,13 +459,19 @@
     top: 9px;
     background-image: url('../img/icon-potential.png');
 }
-.project-vote-potential:hover:before {
-    background-image: url('../img/icon-potential.gif');
+.project-vote-potential:hover,
+.project-vote-potential.is-active {
+    &:before {
+        background-image: url('../img/icon-potential.gif');
+    }
 }
 .project-vote-experimental:before {
     top: 3px;
     background-image: url('../img/icon-experiment.png');
 }
-.project-vote-experimental:hover:before {
-    background-image: url('../img/icon-experiment.gif');
+.project-vote-experimental:hover,
+.project-vote-experimental.is-active {
+    &:before {
+        background-image: url('../img/icon-experiment.gif');
+    }
 }
