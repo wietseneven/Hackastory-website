@@ -54,19 +54,19 @@
                             <h4 class="projects-filter-heading">Sort by</h4>
                             <ul class="projects-filter-list">
                                 <li>
-                                    <input type="radio" name="projects-sort" id="projects-sort-mostvotes" checked>
+                                    <input type="radio" value="most-votes" name="projects-sort" id="projects-sort-mostvotes" checked>
                                     <label for="projects-sort-mostvotes">Most votes</label>
                                 </li>
                                 <li>
-                                    <input type="radio" name="projects-sort" id="projects-sort-bestexperiment">
+                                    <input type="radio" value="best-experiment" name="projects-sort" id="projects-sort-bestexperiment">
                                     <label for="projects-sort-bestexperiment">Best experiment</label>
                                 </li>
                                 <li>
-                                    <input type="radio" name="projects-sort" id="projects-sort-mostpotential">
+                                    <input type="radio" value="most-potential" name="projects-sort" id="projects-sort-mostpotential">
                                     <label for="projects-sort-mostpotential">Most potential</label>
                                 </li>
                                 <li>
-                                    <input type="radio" name="projects-sort" id="projects-sort-mostrecent">
+                                    <input type="radio" value="recent" name="projects-sort" id="projects-sort-mostrecent">
                                     <label for="projects-sort-mostrecent">Recent</label>
                                 </li>
                             </ul>

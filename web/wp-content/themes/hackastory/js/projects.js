@@ -45,7 +45,7 @@
     var filter = {
         init: function() {
             $('.projects-list').clone().addClass('projects-list--clone').removeClass('projects-list').insertAfter('.projects-list');
-            $('.projects-filter-category').on('change', $.proxy(function() {
+            $('.projects-filter-category, input[name="projects-sort"]').on('change', $.proxy(function() {
                 this.filter();
             }, this));
 
@@ -74,22 +74,21 @@
             // Show all categories if no selection was made
             if ( !categories.length ) {
                 $('.projects-list [data-categories]').show();
-                return;
-            }
+            } else {
+                $('.projects-list [data-categories]').each(function() {
+                    var arr = $(this).data('categories').split(',');
 
-            $('.projects-list [data-categories]').each(function() {
-                var arr = $(this).data('categories').split(',');
-
-                var show = false;
-                for ( var i in arr ) {
-                    if ( categories.indexOf(arr[i]) >= 0 ) {
-                        show = true;
-                        break;
+                    var show = false;
+                    for ( var i in arr ) {
+                        if ( categories.indexOf(arr[i]) >= 0 ) {
+                            show = true;
+                            break;
+                        }
                     }
-                }
 
-                if ( !show ) $(this).remove();
-            });
+                    if ( !show ) $(this).remove();
+                });
+            }
 
             // Show message if theres
             if ( !$('.projects-list [data-categories]').length ) {
@@ -98,7 +97,23 @@
             }
 
             // Sort the items
-            // TODO
+            var $wrapper = $('.projects-list'),
+                sort = $('input[name="projects-sort"]:checked', '.projects-filter').val();
+            $wrapper.children('li').sort(function(a, b) {
+                var $a = $(a),
+                    $b = $(b);
+
+                switch ( sort ) {
+                    case 'most-votes':
+                        return (($b.attr('data-potentional-votes') + $b.attr('data-experiment-votes')) > ($a.attr('data-potentional-votes') + $a.attr('data-experiment-votes'))) ? 1 : -1;
+                    case 'best-experiment':
+                        return ($b.attr('data-experiment-votes') > $a.attr('data-experiment-votes')) ? 1 : -1;
+                    case 'most-potential':
+                        return ($b.attr('data-potentional-votes') > $a.attr('data-potentional-votes')) ? 1 : -1;
+                    case 'recent':
+                        return ($b.attr('data-timestamp') > $a.attr('data-timestamp')) ? 1 : -1;
+                }
+            }).appendTo($wrapper);
         }
     }
     var votes = {
