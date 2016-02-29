@@ -160,8 +160,17 @@
             });
         }
     }
+    var links = {
+        init: function() {
+            $('.project-actions a[target="_blank"]').on('click', function(e) {
+                e.preventDefault();
+                window.open($(this).attr('href'), null, 'height=400,width=700');
+            });
+        }
+    }
 
     $(function() {
+        links.init();
         filter.init();
         actionbar.init();
         votes.init();

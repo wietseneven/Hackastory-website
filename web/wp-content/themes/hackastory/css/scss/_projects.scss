@@ -410,6 +410,17 @@
         &:last-child {
             margin-right: 0;
         }
+        &.right {
+            float: right;
+
+            li {
+                > a,
+                > span {
+                    border-right: none;
+                    border-left: 3px solid #ddd;
+                }
+            }
+        }
 
         li {
             float: left;
@@ -424,6 +435,26 @@
 
                 &:hover {
                     background-color: $primary;
+                }
+                &.project-actions-fb,
+                &.project-actions-twitter {
+                    color: #fff;
+                    border: none;
+                    transition: background .15s;
+                }
+                &.project-actions-fb {
+                    background-color: #3b5998;
+
+                    &:hover {
+                        background-color: mix(#000, #3b5998, 10%);
+                    }
+                }
+                &.project-actions-twitter {
+                    background-color: #55acee;
+
+                    &:hover {
+                        background-color: mix(#000, #55acee, 10%);
+                    }
                 }
             }
         }
