@@ -6,7 +6,6 @@
         <?php if ( get_field('project-event') ) { ?>
             <em class="project-event"><?php the_field('project-event'); ?></em>
         <?php } ?>
-        <p class="project-lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque doloribus harum illo impedit minima nesciunt numquam optio quam rerum vero.</p>
         <div class="project-content">
             <div class="project-actions">
                 <ul>
