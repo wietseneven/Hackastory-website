@@ -1,0 +1,6 @@
+#!/bin/bash
+wget http://wordpress.org/latest.zip
+unzip latest.zip
+cp -rv wordpress/* ../web/
+rm latest.zip
+rm -rf wordpress
