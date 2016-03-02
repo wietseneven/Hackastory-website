@@ -34,12 +34,27 @@
                 requestAnimationFrame(animloop);
                 self.update();
             })();
+
+            // Responsive
+            $(window).on('resize load', $.proxy(function() {
+                this.resize();
+            }, this));
         },
         update: function() {
             var y = $(document).scrollTop(),
                 offset = $('.project-content').offset().top;
 
             $('.project-actions').toggleClass('is-sticky', y > offset);
+        },
+        resize: function() {
+            var width = 0,
+                $container = $('.project-actions-container');
+
+            $container.children().each(function() {
+                width += $(this).outerWidth(true);
+            });
+
+            $container.css('min-width', width + 20);
         }
     }
     var filter = {

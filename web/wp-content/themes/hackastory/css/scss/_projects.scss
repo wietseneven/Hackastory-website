@@ -418,12 +418,23 @@
     width: 100%;
     margin: 0 0 2rem;
     background-color: #eee;
+    overflow: scroll;
+    overflow-x: auto;
+    overflow-y: hidden;
     @extend .clearfix;
+
+    @include mq('small') {
+        margin-left: calc(-15px);
+        margin-right: calc(-15px);
+        width: calc(100% + 30px);
+    }
 
     &.is-sticky {
         position: fixed;
         left: 50%;
+        width: 100%;
         max-width: 960px;
+        margin: 0;
         transform: translateX(-50%);
     }
 
@@ -486,6 +497,9 @@
             }
         }
     }
+}
+.project-actions-container {
+    @extend .clearfix;
 }
 .project {
     p {

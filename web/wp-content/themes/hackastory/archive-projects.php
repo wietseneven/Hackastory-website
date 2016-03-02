@@ -1,4 +1,12 @@
 <?php get_header(); ?>
+<?php
+    $projects = new WP_Query(
+        array(
+            'post_type' => 'projects',
+            'posts_per_page' => -1
+        )
+    );
+?>
 <div class="container">
     <div class="projects">
         <div class="row">
@@ -6,7 +14,7 @@
                 <h1 class="project-heading">Projects</h1>
             </div>
         </div>
-        <?php if ( have_posts() ) { ?>
+        <?php if ( $projects->have_posts() ) { ?>
             <div class="row">
                 <div class="large-12 columns">
                     <div class="projects-notification">
@@ -81,8 +89,8 @@
             </div>
             <ul class="projects-list row">
                 <?php
-                    while ( have_posts() ) {
-                        the_post();
+                    while ( $projects->have_posts() ) {
+                        $projects->the_post();
                         $image = get_field('project-image');
                         ?>
                         <li class="medium-6 columns"
@@ -125,7 +133,11 @@
                 ?>
             </ul>
         <?php } else { ?>
-            <p>No projects could be found.</p>
+            <div class="row">
+                <div class="large-12 columns">
+                    <p>No projects could be found.</p>
+                </div>
+            </div>
         <?php } ?>
     </div>
 </div>
