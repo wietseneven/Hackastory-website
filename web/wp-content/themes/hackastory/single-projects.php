@@ -15,7 +15,7 @@
                 </ul>
                 <ul>
                     <?php if ( get_field('project-demo') ) { ?>
-                        <li><a href="<?php echo get_field('project-demo'); ?>" target="_blank">Demo</a></li>
+                        <li><a href="<?php echo get_field('project-demo'); ?>" target="_blank">Try it!</a></li>
                     <?php } ?>
                 </ul>
                 <ul class="right">
