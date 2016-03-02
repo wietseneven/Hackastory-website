@@ -363,7 +363,7 @@
         overflow: auto;
     }
 
-    .excerpt & {
+    .project-excerpt & {
         position: absolute;
         bottom: 20px;
         left: 20px;
@@ -378,7 +378,7 @@
         height: 24px;
         margin-right: 6px;
         float: left;
-        background: $black url('../img/member-default.png') center;
+        background: $black url('../img/member-default.png') center no-repeat;
         background-size: cover;
         @extend .hide-text;
 

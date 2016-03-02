@@ -111,7 +111,7 @@
                                     <span class="project-excerpt-banner"><?php the_field('project-banner'); ?></span>
                                 <?php } ?>
                                 <?php if ( get_field('project-members') ) { ?>
-                                    <ul class="project-excerpt-members">
+                                    <ul class="project-members">
                                         <?php
                                             while ( has_sub_field('project-members') ) {
                                                 $image = get_sub_field('project-member-image');
