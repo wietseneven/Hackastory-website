@@ -38,7 +38,7 @@
         ga('send', 'pageview');
     </script>
 </head>
-<body id="body">
+<body id="body" <?php body_class($class); ?>>
     <?php if (!isset($hidenav)): ?>
     <nav class="main-nav">
         <a href="<?= $T->getHome(); ?>" class="main-nav-logo">
