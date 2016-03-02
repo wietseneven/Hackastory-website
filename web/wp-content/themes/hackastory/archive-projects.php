@@ -6,6 +6,7 @@
             'posts_per_page' => -1
         )
     );
+    $events = get_field_object('field_56c6ffc4120b3');
 ?>
 <div class="container">
     <div class="projects">
@@ -23,7 +24,7 @@
                                 <h2 class="projects-notification-heading">Masters of Tinkering Awards</h2>
                             </div>
                             <div class="large-6 columns">
-                                <p class="projects-notification-description">In 1 year: 5 hackathons, 4 countries, 3 continents and 21 prototypes. Time to celebrate with the Masters of Tinkering Awards.</p>
+                                <p class="projects-notification-description">In 1 year: <?php echo count($events['choices']); ?> hackathons, 4 countries, 3 continents and <?php echo $projects->found_posts; ?> prototypes. Time to celebrate with the Masters of Tinkering Awards.</p>
                                 <p><strong class="projects-notification-goal">Choose a winner in each catagory</strong></p>
                             </div>
                             <div class="large-6 columns">
