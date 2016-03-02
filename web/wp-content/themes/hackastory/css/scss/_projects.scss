@@ -2,12 +2,21 @@
 .project {
     max-width: 960px;
     margin: 20px auto 50px;
+    clear: both;
+
+    iframe,
+    img {
+        display: block;
+        max-width: 100%;
+        margin: 20px auto;
+    }
 }
 .project-heading {
     margin: 10px 0;
     padding: 0;
     background: none;
     transform: none !important;
+    float: left;
 }
 
 .projects-notification {
@@ -338,14 +347,29 @@
         border-left-color: transparent;
     }
 }
-.project-excerpt-members {
-    position: absolute;
+
+// Members
+.project-members {
     z-index: 4;
-    bottom: 20px;
-    left: 20px;
     padding: 0;
-    margin: 0;
+    margin: 25px 0 0 10px;
     list-style-type: none;
+    float: right;
+
+    @include mq('small') {
+        float: none;
+        margin-left: 0;
+        margin-bottom: 5px;
+        overflow: auto;
+    }
+
+    .excerpt & {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        margin: 0;
+        float: none;
+    }
 
     li {
         cursor: default;
@@ -375,12 +399,15 @@
 .project-event {
     display: block;
     margin: -10px 0 12px;
+    float: left;
+    clear: left;
 }
 .project-lead {
     font-weight: bold;
     margin-bottom: 2.5rem !important;
 }
 .project-content {
+    clear: both;
     position: relative;
     padding-top: 80px;
 }

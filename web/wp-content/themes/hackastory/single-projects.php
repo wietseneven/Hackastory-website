@@ -2,6 +2,18 @@
 <?php the_post(); ?>
 <div class="container">
     <article class="project">
+        <?php if ( get_field('project-members') ) { ?>
+            <ul class="project-members">
+                <?php
+                    while ( has_sub_field('project-members') ) {
+                        $image = get_sub_field('project-member-image');
+                        ?>
+                        <li title="<?php the_sub_field('project-member-name'); ?>"<?php if ( $image ) echo ' style="background-image: url(' . $image['sizes']['thumbnail'] . ');"'; ?>><?php the_sub_field('project-member-name'); ?></li>
+                        <?php
+                    }
+                ?>
+            </ul>
+        <?php } ?>
         <h1 class="project-heading"><?php the_title(); ?></h1>
         <?php if ( get_field('project-event') ) { ?>
             <em class="project-event"><?php the_field('project-event'); ?></em>
