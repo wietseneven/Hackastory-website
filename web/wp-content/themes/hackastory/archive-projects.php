@@ -116,8 +116,14 @@
                                         <?php
                                             while ( has_sub_field('project-members') ) {
                                                 $image = get_sub_field('project-member-image');
+                                                $url = esc_url(get_sub_field('project-member-url'));
                                                 ?>
-                                                <li title="<?php the_sub_field('project-member-name'); ?>"<?php if ( $image ) echo ' style="background-image: url(' . $image['sizes']['thumbnail'] . ');"'; ?>><?php the_sub_field('project-member-name'); ?></li>
+                                                <li class="project-member" title="<?php the_sub_field('project-member-name'); ?>"<?php if ( $image ) echo ' style="background-image: url(' . $image['sizes']['thumbnail'] . ');"'; ?>>
+                                                    <?php the_sub_field('project-member-name'); ?>
+                                                    <?php if ( $url ) { ?>
+                                                        <a href="<?php echo $url; ?>" target="_blank" class="project-member-anchor"></a>
+                                                    <?php } ?>
+                                                </li>
                                                 <?php
                                             }
                                         ?>
