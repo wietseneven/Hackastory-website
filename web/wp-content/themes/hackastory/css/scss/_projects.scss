@@ -366,8 +366,9 @@
 
     .project-excerpt & {
         position: absolute;
-        bottom: 20px;
+        bottom: 12px;
         left: 20px;
+        width: calc(100% - 40px);
         margin: 0;
         float: none;
     }
@@ -378,11 +379,17 @@
     width: 24px;
     height: 24px;
     margin-left: 8px;
+    margin-bottom: 8px;
     float: left;
     background: $black url('../img/member-default.png') center no-repeat;
     background-size: cover;
     cursor: default;
     @extend .hide-text;
+
+    @include mq('small') {
+        margin-left: 0;
+        margin-right: 8px;
+    }
 
     &:first-child {
         margin-left: 0;

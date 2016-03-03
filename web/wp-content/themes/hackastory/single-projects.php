@@ -8,6 +8,7 @@
                 <?php
                     while ( has_sub_field('project-members') ) {
                         $image = get_sub_field('project-member-image');
+                        $url = esc_url(get_sub_field('project-member-url'));
                         ?>
                         <li class="project-member" title="<?php the_sub_field('project-member-name'); ?>"<?php if ( $image ) echo ' style="background-image: url(' . $image['sizes']['thumbnail'] . ');"'; ?>>
                             <?php the_sub_field('project-member-name'); ?>
