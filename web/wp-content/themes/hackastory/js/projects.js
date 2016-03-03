@@ -177,7 +177,7 @@
     }
     var links = {
         init: function() {
-            $('.project-actions a[target="_blank"]').on('click', function(e) {
+            $('.js-new-window').on('click', function(e) {
                 e.preventDefault();
                 window.open($(this).attr('href'), null, 'height=400,width=700');
             });
