@@ -93,6 +93,11 @@
                     while ( $projects->have_posts() ) {
                         $projects->the_post();
                         $image = get_field('project-image');
+
+                        // Reset votes
+                        //update_post_meta(get_the_ID(), 'project-votes-experimental', 0);
+                        //update_post_meta(get_the_ID(), 'project-votes-potential', 0);
+
                         ?>
                         <li class="medium-6 columns"
                             data-categories="<?php echo join(',', get_field('project-categories')); ?>"

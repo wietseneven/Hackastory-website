@@ -54,6 +54,12 @@ $main-nav-height: 80px;
         display: block;
     }
 }
+@include mq(320px) {
+    .main-nav .main-nav-logo h1 {
+        font-size: 1.7rem !important;
+        margin-top: 20px !important;
+    }
+}
 
 .main-nav {
     @include wh(calc(100% - #{$default-padding * 2}), $main-nav-height);
@@ -206,6 +212,11 @@ $main-nav-height: 80px;
     &:after {
         position: absolute;
         background-color: $black;
+
+        .main-nav-toggle:hover + &,
+        .main-nav-toggle:checked + & {
+            background-color: $red;
+        }
     }
     &:before,
     &:after {

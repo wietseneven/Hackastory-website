@@ -41,8 +41,8 @@
 <body id="body" <?php body_class($class); ?>>
     <?php if (!isset($hidenav)): ?>
     <nav class="main-nav">
-        <label for="main-nav-toggle" class="main-nav-toggle-hamburger"></label>
         <input type="checkbox" class="main-nav-toggle" id="main-nav-toggle">
+        <label for="main-nav-toggle" class="main-nav-toggle-hamburger"></label>
 
         <a href="<?= $T->getHome(); ?>" class="main-nav-logo">
             <img src="<?= $T->getTheme(); ?>/img/logo-circle.png">

@@ -37,8 +37,18 @@
                         <?php } ?>
                     </ul>
                     <ul class="right">
-                        <li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank" class="js-new-window project-actions-fb">Facebook</a></li>
-                        <li><a href="https://twitter.com/home?status=<?php echo urlencode('Check out "' . get_the_title() . '", a project made during a @hackastory hackaton! ' . get_permalink()); ?>" target="_blank" class="js-new-window project-actions-twitter">Twitter</a></li>
+                        <li>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank" class="js-new-window project-actions-fb">
+                                <i class="project-social-icon project-social-icon--facebook"><?php include(locate_template('img/icon-fb.svg')); ?></i>
+                                <span class="project-social-label">Share</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/home?status=<?php echo urlencode('Check out "' . get_the_title() . '", a project made during a @hackastory hackaton! ' . get_permalink()); ?>" target="_blank" class="js-new-window project-actions-twitter">
+                                <i class="project-social-icon project-social-icon--twitter"><?php include(locate_template('img/icon-twitter.svg')); ?></i>
+                                <span class="project-social-label">Tweet</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
