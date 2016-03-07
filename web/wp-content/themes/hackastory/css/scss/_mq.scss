@@ -1,0 +1,38 @@
+/*
+ * Media query mixin
+ *
+ * Allows you to easiliy use media queries inside your Sass files.
+ * It's possible to use CSS units (unitless numbers will be converted to px)
+ * and any of the $grid-breakpoints keys.
+ *
+ * @package              2manydots' Grunt WordPress Boilerplate
+ * @author               Cas Cornelissen <cas.cornelissen@onefinitystudios.com>
+ *
+ * @param string|number  $breakpoint Breakpoint
+ * @param string         [$query: 'max-width'] Media feature
+ * @return string        Supplied SCSS inside a media query
+ */
+
+@mixin mq($breakpoint, $query: 'max-width') {
+    @if ( type-of($breakpoint) == number ) {
+        @if ( unitless($breakpoint) ) {
+            $breakpoint: $breakpoint + 'px';
+        }
+    } @else if ( type-of($breakpoint) == string ) {
+        @if ( map-has-key($grid-breakpoints, $breakpoint) == false ) {
+            @warn "`$breakpoint` \"#{$breakpoint}\" is not defined! Choose one of: " + map-keys($grid-breakpoints) + ".";
+        } @else {
+            @if ( str-slice($query, 1, 4) == 'min-' ) {
+                $breakpoint: nth(map-get($grid-breakpoints, $breakpoint), 1);
+            } @else {
+                $breakpoint: nth(map-get($grid-breakpoints, $breakpoint), 2);
+            }
+        }
+    } @else {
+        @warn "`$breakpoint` was not of type \"number\" or \"string\"! (\"#{$breakpoint}\" was of type \"#{type-of($breakpoint)}\")";
+    }
+
+    @media only screen and (unquote($query): $breakpoint) {
+        @content;
+    }
+}

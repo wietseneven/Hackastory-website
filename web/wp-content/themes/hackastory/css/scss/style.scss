@@ -3,6 +3,7 @@
 @import "fonts";
 @import "values";
 @import "mixins";
+@import "mq";
 @import "sprite";
 @import "base";
 @import "main-nav";
@@ -11,3 +12,6 @@
 @import "classes";
 @import "blog-article";
 @import "share";
+
+@import "grid";
+@import "projects";
