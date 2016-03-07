@@ -1,0 +1,86 @@
+// Columns
+$grid-width: 1280px !default;
+$grid-column-count: 12 !default;
+$grid-column-gutter: 25px !default;
+
+// Breakpoints
+$grid-breakpoints: (
+    'small'   : (0em,       40em),
+    'medium'  : (40.0625em, 64em),
+    'large'   : (64.0625em, 90em),
+    'xlarge'  : (90.0625em, 120em),
+    'xxlarge' : (120.0625em),
+) !default;
+
+// Classes
+.row {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: $grid-width + $grid-column-gutter;
+    clear: both;
+    @include clearfix();
+
+    .row {
+        width: auto;
+        max-width: none;
+        margin-left: -($grid-column-gutter/2);
+        margin-right: -($grid-column-gutter/2);
+    }
+
+    &.collapsed {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+// Base columns
+.columns {
+    float: left;
+    width: 100%;
+    padding: 0 $grid-column-gutter/2;
+    min-height: 1px;
+
+    .row.collapsed > & {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@each $key, $value in $grid-breakpoints {
+    // Columns
+    @include mq(nth($value, 1), 'min-width') {
+        .row {
+            @for $i from 1 through $grid-column-count {
+                > .columns {
+                    &.#{$key}-#{$i} {
+                        width: percentage($i / $grid-column-count);
+
+                        &.#{$key}-centered {
+                            margin-left: auto;
+                            margin-right: auto;
+                            float: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Visibility classes
+    .show-for-#{$key}-up { display: none; }
+    @include mq(nth($value, 1), 'min-width') {
+        .hide-for-#{$key}-up { display: none; }
+        .show-for-#{$key}-up { display: block; }
+    }
+
+    .show-for-#{$key}-only { display: none; }
+    @if ( length($value) >= 2 ) {
+        @include mq(nth($value, 1), 'min-width') {
+            @include mq(nth($value, 2), 'max-width') {
+                .hide-for-#{$key}-only { display: none; }
+                .show-for-#{$key}-only { display: block; }
+            }
+        }
+    }
+}
