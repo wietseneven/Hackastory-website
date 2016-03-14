@@ -24,6 +24,7 @@
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?>" href="/feed" />
     <link rel="stylesheet" href="<?= $T->getTheme(); ?>/css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
     <?php wp_head(); ?>
 
@@ -37,9 +38,12 @@
         ga('send', 'pageview');
     </script>
 </head>
-<body id="body">
+<body id="body" <?php body_class($class); ?>>
     <?php if (!isset($hidenav)): ?>
     <nav class="main-nav">
+        <input type="checkbox" class="main-nav-toggle" id="main-nav-toggle">
+        <label for="main-nav-toggle" class="main-nav-toggle-hamburger"></label>
+
         <a href="<?= $T->getHome(); ?>" class="main-nav-logo">
             <img src="<?= $T->getTheme(); ?>/img/logo-circle.png">
             <h1><?php bloginfo('name'); ?></h1>
